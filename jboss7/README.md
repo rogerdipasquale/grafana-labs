@@ -17,7 +17,12 @@ Download jmx_exporter from https://github.com/prometheus/jmx_exporter/releases/t
 curl https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent_java6/0.17.1/jmx_prometheus_javaagent_java6-0.17.1.jar -o ./jmx_prometheus_javaagent_java6-0.17.1.jar
 
 
-### Image creation
+### Docker Image
 
-You can use: 
-`docker build -t jboss-as7:jmx_exporter .`
+You can create it by using: 
+`docker build -t jboss-as7:jmx-exporter .`
+
+You can run it with:
+
+`docker run --rm -d -p 8080:8080 -p 19080:19080 jboss-as7:jmx-exporter `
+
