@@ -25,4 +25,4 @@ jobs:
         with:
           context: jboss7/ 
           push: true
-          tags: rogerdipasquale/jboss-as7:${{ github.sha }},rogerdipasquale/jboss-as7:latest
+          tags: ghcr.io/rogerdipasquale/jboss-as7:${{ github.sha }},ghcr.io/rogerdipasquale/jboss-as7:latest
