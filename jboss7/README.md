@@ -26,3 +26,6 @@ You can run it with:
 
 `docker run --rm -d -p 8080:8080 -p 19080:19080 jboss-as7:jmx-exporter `
 
+### Automatic image creation
+
+As defined by the [Github Action](../.github/workflows/build-jboss7-image.yaml), whenever a push is made to  branch release-jboss-image, a new image tagged with commit hash and "latest" will be uploaded to github repository.
