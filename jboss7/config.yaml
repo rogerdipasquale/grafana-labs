@@ -1,0 +1,12 @@
+rules:
+ - pattern: 'Catalina<type=GlobalRequestProcessor,name="(w+-w+)-(d+)"><>(w+):'
+   name: tomcat_$3_total
+   labels:
+     port: "$2"
+     protocol: "$1"
+   help: Tomcat global $3
+   type: COUNTER
+
+startDelaySeconds: 0
+host: 0.0.0.0
+port: 19080
