@@ -20,3 +20,10 @@ kubectl port-forward service/grafana-demo  8080:80
 ```
 
 And then access using `http://127.0.0.1:8080`
+
+## Dashboard used:
+
+
+https://grafana.com/grafana/dashboards/14845-jmx-dashboard-basic/ (id: 14845)
+
+https://grafana.com/grafana/dashboards/22784-lightweight-apm-for-opentelemetry/ seems promising, needs Loki for logs
