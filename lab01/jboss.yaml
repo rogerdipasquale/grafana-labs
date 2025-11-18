@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jboss
+  namespace: default
+  labels:
+    app: jboss
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jboss
+  template:
+    metadata:
+      labels:
+        app: jboss
+    spec:
+      containers:
+      - name: manager
+        image: ghcr.io/rogerdipasquale/jboss-as7:latest
+        ports:
+        - containerPort: 8080
+          name: web
+        - containerPort: 19080
+          name: metrics
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jboss
+  namespace: default
+spec:
+  selector:
+    app: jboss
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+      name: web
+    - protocol: TCP
+      port: 19080
+      targetPort: 19080
+      name: metrics
+  type: ClusterIP
