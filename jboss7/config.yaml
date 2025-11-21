@@ -6,6 +6,7 @@ rules:
      protocol: "$1"
    help: Tomcat global $3
    type: COUNTER
+ - pattern: ".*"
 
 startDelaySeconds: 0
 host: 0.0.0.0
